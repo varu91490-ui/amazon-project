@@ -1,0 +1,15 @@
+1. how do we know which product too add to cart when we click add to cart button for this we have a optin in html called 
+data attribute:allows us to attach any information to an element
+syntax=attributename=attribute value on right and the attribute must start with data
+
+
+14.modules
+a better way to organize the code
+
+to get a variable out of a file
+1.add type="module" attribute2.export
+3.import
+
+benefits of module:
+1.help to avoid naming conflicts like we dont know in which file we have created which variable
+2.dont have to worry about order of our files when impotred in html file as if we put data at end it wont work like that and better way to organize our code in large projects
