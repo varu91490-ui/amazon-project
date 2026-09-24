@@ -13,3 +13,10 @@ to get a variable out of a file
 benefits of module:
 1.help to avoid naming conflicts like we dont know in which file we have created which variable
 2.dont have to worry about order of our files when impotred in html file as if we put data at end it wont work like that and better way to organize our code in large projects
+
+*deduplicating or normalizing the data :
+we dont have to store the entire information of a product in another file as it is already saved in product.js and when the same product id is mentioned in the cart.js file it will directly consider the data in product.js file
+
+steps in javascript
+1.save the data:example add the deatils or the data to be printed in the arr or in the form of objects
+2.use the data to egnerate the html
