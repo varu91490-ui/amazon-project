@@ -19,8 +19,12 @@ we dont have to store the entire information of a product in another file as it 
 
 steps in javascript
 1.save the data:example add the deatils or the data to be printed in the arr or in the form of objects
-2.use the data to egnerate the html
-
+2.use the data to egnerate the html:it is generated in checkout.js 
+3.make it interactive
 
 we created utils module to store the common function 
 for exapmple converting the price to cents is common in both amazon.js and checkout.js so add this common function
+
+to upate the html
+1.use the dom to get the element to remove 
+2.use .remove() method to remove from the page
