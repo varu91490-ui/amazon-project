@@ -20,3 +20,7 @@ we dont have to store the entire information of a product in another file as it 
 steps in javascript
 1.save the data:example add the deatils or the data to be printed in the arr or in the form of objects
 2.use the data to egnerate the html
+
+
+we created utils module to store the common function 
+for exapmple converting the price to cents is common in both amazon.js and checkout.js so add this common function
