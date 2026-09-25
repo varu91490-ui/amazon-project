@@ -1,38 +1,31 @@
- export let cart=JSON.parse(localStorage.getItem('cart'));
- 
+export let cart = JSON.parse(localStorage.getItem('cart'));
 
- if(!cart){
-  cart=[{
-  productId:'e43638ce-6aa0-4b85-b27f-e1d07eb678c6',
-  quantity:2
- },{
-  productId:'15b6fc6f-327a-4ec4-896f-486349e85a3d',
-  quantity:1
- }];
- }
- 
-//to store in locl storage so even after refreshing the chages we made will be stored
- function saveToStorage(){
-  localStorage.setItem('cart',JSON.stringify(cart));
- }
+if (!cart) {
+  cart = [{
+    productId: 'e43638ce-6aa0-4b85-b27f-e1d07eb678c6',
+    quantity: 2,
+  }, {
+    productId: '15b6fc6f-327a-4ec4-896f-486349e85a3d',
+    quantity: 1
+  }];
+}
 
+function saveToStorage() {
+  localStorage.setItem('cart', JSON.stringify(cart));
+}
 
- //function to add a product to cart like what functions should be done beofre adding it
-export function addtoCart(productId){
+export function addToCart(productId) {
+  let matchingItem;
 
-    let matchingItem;
+  cart.forEach((cartItem) => {
+    if (productId === cartItem.productId) {
+      matchingItem = cartItem;
+    }
+  });
 
-    cart.forEach((cartitem) => {
-      if(cartitem.productId===productId){
-        matchingItem=cartitem;
-        return;
-      }
-    });
-
-
-    if(matchingItem){
-      matchingItem.quantity+=1;
-    } else {
+  if (matchingItem) {
+    matchingItem.quantity += 1;
+  } else {
     cart.push({
       productId: productId,
       quantity: 1
@@ -42,14 +35,16 @@ export function addtoCart(productId){
   saveToStorage();
 }
 
-export function removeFromCart(productId){
-  //create a new array with all the items except the one to be removed
-  const newCart=[];
-  cart.forEach((cartitem) => {
-    if(cartitem.productId!==productId){
-      newCart.push(cartitem);
+export function removeFromCart(productId) {
+  const newCart = [];
+
+  cart.forEach((cartItem) => {
+    if (cartItem.productId !== productId) {
+      newCart.push(cartItem);
     }
   });
-  cart=newCart;
+
+  cart = newCart;
+
   saveToStorage();
 }
