@@ -1,4 +1,4 @@
-import {cart, removeFromCart} from '../data/cart.js';//this is named export we use it when we have to export multiple things
+import {cart, removeFromCart,updateDeliveryOption} from '../data/cart.js';//this is named export we use it when we have to export multiple things
 import {products} from '../data/products.js';
 import {formatCurrency} from './utils/money.js';
 import dayjs from 'https://unpkg.com/supersimpledev@8.5.0/dayjs/esm/index.js';//its called default export we use it when we have to expory only one thibg
@@ -94,7 +94,9 @@ deliveryOptions.forEach((deliveryOption)=>{
 
   const isChecked=deliveryOption.id===cartItem.deliveryOptionId;
   html+=`
-          <div class="delivery-option">
+          <div class="delivery-option js-delivery-option"
+          data-product-id="${matchingProduct.id}"
+          data-delivery-option-id="${deliveryOption.id}">
             <input type="radio" 
               ${isChecked?'checked':''}
               class="delivery-option-input"
@@ -127,5 +129,13 @@ document.querySelectorAll('.js-delete-link')
         `.js-cart-item-container-${productId}`
       );
       container.remove();
+    });
+  });
+
+  document.querySelectorAll('.js-delivery-option')
+  .forEach((element) => {
+    element.addEventListener('click', () => {
+      const {productId,deliveryOptionId} = element.dataset;
+      updateDeliveryOption(productId, deliveryOptionId);
     });
   });
