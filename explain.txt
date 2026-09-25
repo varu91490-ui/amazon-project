@@ -47,3 +47,12 @@ the javscript code and comprresed as it helps to load and upload fatser and hte 
 ESM version:
 ecmaScript Module ecmascript is nothing but javascript a version that work with javascript modules
 nothing but we use esm version of code in javascript to combine both external lobraries and hs together esm is notjing but the code diretly from internet
+
+in checkout.js we re run the same code to update the date when we selcted one instead of dom because in dom it will update all at once and it is not required and here we r doing
+1.update the data
+2.regenerate all the HTML and this is called MVC
+model-view-controller
+1.model-saves and manages the data ex:cart.js which manages the data
+2.view=takes the data and displays it on the pageex: checkout.js it takes the data and generate html for this
+3.controller=runs some code when we interact with the page ex:in the same checkout.js doucument queryselectors does this part to interact with the page
+ so MVC makes sure the page always matches the data it is a design pattern
