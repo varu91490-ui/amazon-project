@@ -28,3 +28,22 @@ for exapmple converting the price to cents is common in both amazon.js and check
 to upate the html
 1.use the dom to get the element to remove 
 2.use .remove() method to remove from the page
+
+external libraries:code that is outside of our projects
+lot of developers write javascript code and put it on internet and we can load it into our project
+
+external librabries let us use code and share code and avoid duplicating work
+
+in the checkout page to update the dates of delivary we have to do
+1.get todays dates
+2.do calculatins
+3.display the date in easy-to-read-format
+
+so we use external library as it takes too much time to do this and the name is DayJs library its 
+an famous external library
+
+the javscript code and comprresed as it helps to load and upload fatser and hte process is known as minification
+
+ESM version:
+ecmaScript Module ecmascript is nothing but javascript a version that work with javascript modules
+nothing but we use esm version of code in javascript to combine both external lobraries and hs together esm is notjing but the code diretly from internet
